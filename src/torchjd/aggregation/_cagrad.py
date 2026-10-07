@@ -134,5 +134,5 @@ class CAGrad(GramianWeightedAggregator, _NonDifferentiable):
         return f"{self.__class__.__name__}(c={self.c}, norm_eps={self.norm_eps})"
 
     def __str__(self) -> str:
-        c_str = str(self.c).rstrip("0")
+        c_str = str(self.c).removesuffix(".0")
         return f"CAGrad{c_str}"
