@@ -61,7 +61,7 @@ class AlignedMTLWeighting(_GramianWeighting):
         scale_mode: SUPPORTED_SCALE_MODE = "min",
     ) -> Tensor:
         lambda_, V = torch.linalg.eigh(M, UPLO="U")  # More modern equivalent to torch.symeig
-        tol = torch.max(lambda_) * len(M) * torch.finfo().eps
+        tol = torch.max(lambda_) * len(M) * torch.finfo(M.dtype).eps
         rank = sum(lambda_ > tol)
 
         if rank == 0:
