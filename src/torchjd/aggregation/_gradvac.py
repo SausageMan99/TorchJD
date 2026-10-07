@@ -191,4 +191,4 @@ class GradVac(GramianWeightedAggregator, Stateful, _NonDifferentiable):
         self._gradvac_weighting.reset()
 
     def __repr__(self) -> str:
-        return f"GradVac(beta={self.beta!r}, eps={self.eps!r})"
+        return f"{self.__class__.__name__}(beta={self.beta!r}, eps={self.eps!r})"
