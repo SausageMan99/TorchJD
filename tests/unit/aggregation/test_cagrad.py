@@ -96,3 +96,7 @@ def test_weighting_norm_eps_setter_rejects_negative() -> None:
     W = CAGradWeighting(c=0.5)
     with raises(ValueError, match="norm_eps"):
         W.norm_eps = -1e-9
+
+
+def test_weighting_has_docstring() -> None:
+    assert CAGradWeighting.__doc__ is not None
